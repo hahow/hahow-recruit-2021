@@ -1,5 +1,13 @@
 # Hahow recruit 2021
 
+## TODOs
+
+- [ ] 找到 Huck 跟 Spyder Man (?) 的大頭貼
+- [ ] 串 CICD
+- [ ] 補 4 個 API 的 unit-test
+- [ ] 重構
+- [ ] 串 Sentry
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
