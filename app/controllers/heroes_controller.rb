@@ -1,58 +1,48 @@
 class HeroesController < ApplicationController
-  before_action :set_hero, only: [:show, :edit, :update, :destroy]
+  before_action :set_hero, only: [:show, :profile, :patch_profile]
+
+  skip_before_action :verify_authenticity_token
 
   # GET /heroes
   def index
     @heroes = Hero.all
+
+    render json: @heroes.map do |hero|
+      hero.slice(:id, :name, :image)
+    end
   end
 
   # GET /heroes/1
   def show
+    render json: @hero.slice(:id, :name, :image)
   end
 
-  # GET /heroes/new
-  def new
-    @hero = Hero.new
+  def profile
+    render json: @hero.slice(:str, :int, :agi, :luk)
   end
 
-  # GET /heroes/1/edit
-  def edit
-  end
-
-  # POST /heroes
-  def create
-    @hero = Hero.new(hero_params)
-
-    if @hero.save
-      redirect_to @hero, notice: 'Hero was successfully created.'
+  def patch_profile
+    p hero_profile_params
+    if @hero.update(hero_profile_params)
+      render plain: 'OK'
     else
-      render :new
+      render @hero.errors
     end
-  end
-
-  # PATCH/PUT /heroes/1
-  def update
-    if @hero.update(hero_params)
-      redirect_to @hero, notice: 'Hero was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /heroes/1
-  def destroy
-    @hero.destroy
-    redirect_to heroes_url, notice: 'Hero was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hero
-      @hero = Hero.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def hero_params
-      params.require(:hero).permit(:name, :image, :str, :int, :agi, :luk)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hero
+    @hero = Hero.find(params[:id])
+  end
+
+  def hero_profile_params
+    {
+      str: params[:str],
+      int: params[:int],
+      agi: params[:agi],
+      luk: params[:luk]
+    }
+  end
 end
