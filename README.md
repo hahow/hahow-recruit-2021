@@ -2,6 +2,9 @@
 
 ## TODOs
 
+- [ ] 等 Peter 回覆後，討論確認是否沿用此專案
+- [ ] Heroku transfer app 到 Hahow organization
+- [ ] GitHub repo transfer 到 Hahow organization
 - [ ] 找到 Huck 跟 Spyder Man (?) 的大頭貼
 - [ ] 串 CICD
 - [ ] 補 4 個 API 的 unit-test
