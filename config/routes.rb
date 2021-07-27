@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :heros
+  resources :heroes, format: :json
 end
