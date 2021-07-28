@@ -1,15 +1,9 @@
+> ⚠️ ARCHIVED ⚠️
+>
+> 2021/07/27 一度以為前端小專案 API 掛掉而且 repo/heroku 也找不回來，才緊急寫了這個專案，但後來終於還是找回來了（https://bit.ly/3i6G0Lh ），因此前端小專案 API 目前仍是 https://github.com/hahow/hahow-recruit-hero-api
+
 # Hahow recruit 2021
 
-## TODOs
-
-- [ ] 等 Peter 回覆後，討論確認是否沿用此專案
-- [ ] Heroku transfer app 到 Hahow organization
-- [ ] GitHub repo transfer 到 Hahow organization
-- [ ] 找到 Huck 跟 Spyder Man (?) 的大頭貼
-- [ ] 串 CICD
-- [ ] 補 4 個 API 的 unit-test
-- [ ] 重構
-- [ ] 串 Sentry
 
 ## Getting Started
 
